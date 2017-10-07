@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     const DEFAULT_SENTENCE = "In this time, ";
     const LEARN_MORE = "Learn more here: "
-    const DATABASE_SIZE = 1;
+    const DATABASE_SIZE = 18;
 
     var clicked = false;
     var countup;
@@ -14,7 +14,7 @@ $(document).ready(function() {
     var currentSentence = "";
 
     function calculateStatistics(stats, seconds, milliseconds) {
-      return (stats / 3600) * (seconds + milliseconds / 1000);
+      return stats * (seconds + milliseconds / 1000);
     }
 
     function startTimer() {
@@ -71,12 +71,8 @@ $(document).ready(function() {
                 console.log(currentStats);
                 console.log(currentSentence);
                 $("#fact").text(DEFAULT_SENTENCE + calculateStatistics(currentStats, second, millisecond) + " " + currentSentence);
-                //$("#fact").attr("href", facts[position].link);
               });
             });
-
-
-
         }
     });
 
